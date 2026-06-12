@@ -344,7 +344,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#alt-text" id="toc-alt-text" class="nav-link" data-scroll-target="#alt-text">Alt text</a></li>
   <li><a href="#multiple-galleries-per-page" id="toc-multiple-galleries-per-page" class="nav-link" data-scroll-target="#multiple-galleries-per-page">Multiple galleries per page</a></li>
   <li><a href="#credits" id="toc-credits" class="nav-link" data-scroll-target="#credits">Credits</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
   </ul>
 </nav>
     </div>
@@ -381,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="demo" class="level2">
 <h2 class="anchored" data-anchor-id="demo">Demo</h2>
-<p>Visit the demo website to see it in action (and see all the different possible settings).</p>
+<p>Visit <a href="https://andrewheiss.github.io/quarto-static-photo-gallery/">the demo website</a> to see it in action (and see all the different possible settings).</p>
 </section>
 <section id="requirements" class="level2">
 <h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
@@ -565,16 +564,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>You can override any caption element with CSS in your document or theme. The same class names apply in both the thumbnail overlay and the lightbox footer; use the <code>.pswp__pg-caption</code> parent selector to target the lightbox only.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Thumbnail overlay caption */</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-caption</span>     { <span class="co">/* overlay container  */</span> }</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-title</span>       { <span class="co">/* image title        */</span> }</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-meta</span>        { <span class="co">/* date + EXIF stuff  */</span> }</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-description</span> { <span class="co">/* description text   */</span> }</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-caption</span>     { <span class="co">/* overlay container */</span> }</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-title</span>       { <span class="co">/* image title       */</span> }</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-meta</span>        { <span class="co">/* date + EXIF stuff */</span> }</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.pg-description</span> { <span class="co">/* description text  */</span> }</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* Lightbox footer caption */</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.pswp__pg-caption</span>                 { <span class="co">/* lightbox caption container */</span> }</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">.pswp__pg-caption</span> <span class="fu">.pg-title</span>       { <span class="co">/* image title                */</span> }</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">.pswp__pg-caption</span> <span class="fu">.pg-meta</span>        { <span class="co">/* lightbox caption container */</span> }</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.pswp__pg-caption</span> <span class="fu">.pg-description</span> { <span class="co">/* lightbox caption container */</span> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">.pswp__pg-caption</span> <span class="fu">.pg-meta</span>        { <span class="co">/* date + EXIF stuff          */</span> }</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.pswp__pg-caption</span> <span class="fu">.pg-description</span> { <span class="co">/* description text           */</span> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="alt-text" class="level2">
 <h2 class="anchored" data-anchor-id="alt-text">Alt text</h2>
@@ -601,23 +600,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="credits" class="level2">
 <h2 class="anchored" data-anchor-id="credits">Credits</h2>
-<p>The example images are used under the <a href="https://unsplash.com/license">Unsplash license</a>:</p>
+<p>These example photos come from me (they were floating around in my Lightroom library) and are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY 4.0</a>:</p>
 <ul>
-<li><a href="https://images.unsplash.com/photo-1506905925346-21bda4d32df4">Mountains</a></li>
-<li><a href="https://images.unsplash.com/photo-1448375240586-882707db888b">Forest</a></li>
-<li><a href="https://images.unsplash.com/photo-1505118380757-91f5f5632de0">Ocean</a></li>
-<li><a href="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df">City at night</a></li>
-<li><a href="https://images.unsplash.com/photo-1509316785289-025f5b846b35">Desert</a></li>
-<li><a href="https://images.unsplash.com/photo-1490750967868-88df5691cc65">Flowers</a></li>
-<li><a href="https://images.unsplash.com/photo-1434394354979-a235cd36269d">Waterfall</a></li>
-<li><a href="https://images.unsplash.com/photo-1517299321609-52687d1bc55a">Snow</a></li>
-<li><a href="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722">Canyon</a></li>
-<li><a href="https://images.unsplash.com/photo-1439853949212-36089b13f1e8">Lake</a></li>
+<li><a href="img/al-aqsa.jpg">“Al-Aqsa”</a></li>
+<li><a href="img/fanous.jpg">“Fanous”</a></li>
+<li><a href="img/grand-canyon.jpg">“Grand Canyon”</a></li>
+<li><a href="img/ice.jpg">“Ice castle”</a></li>
+<li><a href="img/nauvoo.jpg">“Nauvoo Temple”</a></li>
+<li><a href="img/pyramid-landscape.jpg">“Pyramid (landscape)”</a></li>
+<li><a href="img/pyramid.jpg">“Pyramid”</a></li>
 </ul>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>MIT</p>
+<p>These example photos are used under the <a href="https://unsplash.com/license">Unsplash license</a>:</p>
+<ul>
+<li>“Books” by <a href="https://unsplash.com/@lifeof_peter_">Peter Thomas</a> on <a href="https://unsplash.com/photos/books-fill-a-wooden-bookshelf-he4j9YyWFoo">Unsplash</a></li>
+<li>“Bread” by <a href="https://unsplash.com/@rodolfomarques">Rodolfo Marques</a> on <a href="https://unsplash.com/photos/sliced-breads-GzBO_o0RvEg">Unsplash</a></li>
+<li>“Bridal Veil Falls” by <a href="https://unsplash.com/@psalms">David Wirzba</a> on <a href="https://unsplash.com/photos/photo-of-waterfalls-during-daytime-hZuSXNKCyzE">Unsplash</a></li>
+<li>“Cairo” by <a href="https://unsplash.com/@canismajoris">Hatem Ramadan</a> on <a href="https://unsplash.com/photos/a-sailboat-on-the-water-with-a-city-in-the-background-59RY-ykUIAg">Unsplash</a></li>
+<li>“Capitol Reef” by <a href="https://unsplash.com/@lancetraveler60">Lori Stevens</a> on <a href="https://unsplash.com/photos/a-large-rock-formation-with-an-arch-in-the-middle-of-it-Kdu1gxxua5A">Unsplash</a></li>
+<li>“Colosseum” by <a href="https://unsplash.com/@spencerdavis">Spencer Davis</a> on <a href="https://unsplash.com/photos/aerial-view-of-colosseum-at-rome-italy-ckotRXopwRM">Unsplash</a></li>
+<li>“Doha” by <a href="https://unsplash.com/@akbarnemati">Akbar Nemati</a> on <a href="https://unsplash.com/photos/a-city-skyline-with-a-full-moon-in-the-sky-Q8NuHm4PbXc">Unsplash</a></li>
+<li>“MARTA” by <a href="https://unsplash.com/@levipurk">Levi</a> on <a href="https://unsplash.com/photos/a-silver-train-traveling-over-a-bridge-under-a-blue-sky-jXfCtN7hzZY">Unsplash</a></li>
+<li>“Mt. Timpanogos” by <a href="https://unsplash.com/@northernstatemedia">Sonny Mauricio</a> on <a href="https://unsplash.com/photos/a-snow-covered-mountain-range-with-trees-in-the-foreground-Nv-b4hDOgWY">Unsplash</a></li>
+<li>“Water tower” by <a href="https://unsplash.com/@colincollect">Colin Rowley</a> on <a href="https://unsplash.com/photos/a-water-tower-in-the-middle-of-a-town-kKegdvaaHvo">Unsplash</a></li>
+</ul>
 
 
 </section>
