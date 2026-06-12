@@ -1,6 +1,6 @@
 
 
-# Static photo galleries (through PhotoSwipe) for Quarto
+# Static photo galleries for Quarto
 
 - [Overview](#overview)
 - [Demo](#demo)
@@ -14,7 +14,6 @@
 - [Alt text](#alt-text)
 - [Multiple galleries per page](#multiple-galleries-per-page)
 - [Credits](#credits)
-- [License](#license)
 
 <!-- README.md is generated from _README.qmd. Please edit that file -->
 
@@ -32,7 +31,7 @@ Put simply, it lets you go from this:
 
 ## Demo
 
-Visit the demo website to see it in action (and see all the different possible settings).
+Visit [the demo website](https://andrewheiss.github.io/quarto-static-photo-gallery/) to see it in action (and see all the different possible settings).
 
 ## Requirements
 
@@ -198,16 +197,16 @@ You can override any caption element with CSS in your document or theme. The sam
 
 ``` css
 /* Thumbnail overlay caption */
-.pg-caption     { /* overlay container  */ }
-.pg-title       { /* image title        */ }
-.pg-meta        { /* date + EXIF stuff  */ }
-.pg-description { /* description text   */ }
+.pg-caption     { /* overlay container */ }
+.pg-title       { /* image title       */ }
+.pg-meta        { /* date + EXIF stuff */ }
+.pg-description { /* description text  */ }
 
 /* Lightbox footer caption */
 .pswp__pg-caption                 { /* lightbox caption container */ }
 .pswp__pg-caption .pg-title       { /* image title                */ }
-.pswp__pg-caption .pg-meta        { /* lightbox caption container */ }
-.pswp__pg-caption .pg-description { /* lightbox caption container */ }
+.pswp__pg-caption .pg-meta        { /* date + EXIF stuff          */ }
+.pswp__pg-caption .pg-description { /* description text           */ }
 ```
 
 ## Alt text
@@ -242,19 +241,25 @@ You can pass an `id` value too, which can be helpful if you want to target it wi
 
 ## Credits
 
-The example images are used under the [Unsplash license](https://unsplash.com/license):
+These example photos come from me (they were floating around in my Lightroom library) and are licensed under [Creative Commons CC BY 4.0](https://creativecommons.org/licenses/by/4.0/):
 
-- [Mountains](https://images.unsplash.com/photo-1506905925346-21bda4d32df4)
-- [Forest](https://images.unsplash.com/photo-1448375240586-882707db888b)
-- [Ocean](https://images.unsplash.com/photo-1505118380757-91f5f5632de0)
-- [City at night](https://images.unsplash.com/photo-1477959858617-67f85cf4f1df)
-- [Desert](https://images.unsplash.com/photo-1509316785289-025f5b846b35)
-- [Flowers](https://images.unsplash.com/photo-1490750967868-88df5691cc65)
-- [Waterfall](https://images.unsplash.com/photo-1434394354979-a235cd36269d)
-- [Snow](https://images.unsplash.com/photo-1517299321609-52687d1bc55a)
-- [Canyon](https://images.unsplash.com/photo-1474044159687-1ee9f3a51722)
-- [Lake](https://images.unsplash.com/photo-1439853949212-36089b13f1e8)
+- [“Al-Aqsa”](img/al-aqsa.jpg)
+- [“Fanous”](img/fanous.jpg)
+- [“Grand Canyon”](img/grand-canyon.jpg)
+- [“Ice castle”](img/ice.jpg)
+- [“Nauvoo Temple”](img/nauvoo.jpg)
+- [“Pyramid (landscape)”](img/pyramid-landscape.jpg)
+- [“Pyramid”](img/pyramid.jpg)
 
-## License
+These example photos are used under the [Unsplash license](https://unsplash.com/license):
 
-MIT
+- “Books” by [Peter Thomas](https://unsplash.com/@lifeof_peter_) on [Unsplash](https://unsplash.com/photos/books-fill-a-wooden-bookshelf-he4j9YyWFoo)
+- “Bread” by [Rodolfo Marques](https://unsplash.com/@rodolfomarques) on [Unsplash](https://unsplash.com/photos/sliced-breads-GzBO_o0RvEg)
+- “Bridal Veil Falls” by [David Wirzba](https://unsplash.com/@psalms) on [Unsplash](https://unsplash.com/photos/photo-of-waterfalls-during-daytime-hZuSXNKCyzE)
+- “Cairo” by [Hatem Ramadan](https://unsplash.com/@canismajoris) on [Unsplash](https://unsplash.com/photos/a-sailboat-on-the-water-with-a-city-in-the-background-59RY-ykUIAg)
+- “Capitol Reef” by [Lori Stevens](https://unsplash.com/@lancetraveler60) on [Unsplash](https://unsplash.com/photos/a-large-rock-formation-with-an-arch-in-the-middle-of-it-Kdu1gxxua5A)
+- “Colosseum” by [Spencer Davis](https://unsplash.com/@spencerdavis) on [Unsplash](https://unsplash.com/photos/aerial-view-of-colosseum-at-rome-italy-ckotRXopwRM)
+- “Doha” by [Akbar Nemati](https://unsplash.com/@akbarnemati) on [Unsplash](https://unsplash.com/photos/a-city-skyline-with-a-full-moon-in-the-sky-Q8NuHm4PbXc)
+- “MARTA” by [Levi](https://unsplash.com/@levipurk) on [Unsplash](https://unsplash.com/photos/a-silver-train-traveling-over-a-bridge-under-a-blue-sky-jXfCtN7hzZY)
+- “Mt. Timpanogos” by [Sonny Mauricio](https://unsplash.com/@northernstatemedia) on [Unsplash](https://unsplash.com/photos/a-snow-covered-mountain-range-with-trees-in-the-foreground-Nv-b4hDOgWY)
+- “Water tower” by [Colin Rowley](https://unsplash.com/@colincollect) on [Unsplash](https://unsplash.com/photos/a-water-tower-in-the-middle-of-a-town-kKegdvaaHvo)
