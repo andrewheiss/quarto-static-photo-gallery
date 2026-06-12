@@ -1,0 +1,33 @@
+---
+title: "Masonry Layout"
+format:
+  html:
+    page-layout: full
+extensions:
+  photo-gallery:
+    layout: masonry
+    columns: 5
+    gap: 6
+---
+
+The **masonry** layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions.
+
+## 5 columns (frontmatter default)
+
+Pass the album folder as a positional argument; all other settings come from the frontmatter defaults above:
+
+```markdown
+{{</* photo-gallery img */>}}
+```
+
+{{< photo-gallery img >}}
+
+## 4 columns via shortcode argument
+
+Override `columns` for a single gallery call without changing the page defaults:
+
+```markdown
+{{</* photo-gallery img columns=4 gap=20 id="five-col" */>}}
+```
+
+{{< photo-gallery img columns=4 gap=20 id="five-col" >}}

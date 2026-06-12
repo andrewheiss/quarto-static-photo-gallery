@@ -1,0 +1,31 @@
+---
+title: "Justified Layout"
+extensions:
+  photo-gallery:
+    album-files: img
+    layout: justified
+    thumbnail-height: 280
+    gap: 5
+---
+
+The **justified** layout fills each row to the full container width at a consistent height, similar to Google Photos or Flickr. Set `thumbnail-height` to control the target row height in pixels.
+
+The frontmatter above sets defaults for this page. Options set there apply to every `{{</* photo-gallery */>}}` call on the page unless overridden by a shortcode argument.
+
+## With EXIF metadata
+
+With `show-exif: true` and `show-date: true`, the lightbox caption area shows a dot-separated summary of whatever EXIF fields are present — date, aperture, shutter speed, focal length, ISO, and camera body. Click any image to see it.
+
+{{< photo-gallery >}}
+
+## Shortcode arguments override frontmatter
+
+Any configuration option can be passed directly to the shortcode. Shortcode arguments take precedence over frontmatter for that call only, so you can set page-wide defaults and override per gallery as needed.
+
+Here the same album is rendered with EXIF hidden, the download button removed, and a `fade` transition instead of the default `zoom`. A unique `id` is required when pointing two galleries at the same album with otherwise identical settings:
+
+```markdown
+{{</* photo-gallery img/ show-exif=false show-date=false show-download=false transition="fade" id="no-exif" */>}}
+```
+
+{{< photo-gallery img/ show-exif=false show-date=false show-download=false transition="fade" id="no-exif" >}}
