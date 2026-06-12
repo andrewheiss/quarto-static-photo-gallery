@@ -1,5 +1,5 @@
 ---
-title: "Masonry Layout"
+title: "Masonry layout"
 format:
   html:
     page-layout: full
@@ -12,24 +12,24 @@ extensions:
     datetime-format: "MMMM D, YYYY [at] h:mm A"
 ---
 
-The **masonry** layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions.
+The masonry layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions.
 
-## 5 columns (frontmatter default)
+## 5 columns
 
-Pass the album folder as a positional argument; all other settings come from the frontmatter defaults above:
+You can pass the album folder as a positional argument; all the other settings come from the frontmatter defaults above:
 
-```markdown
-{{</* photo-gallery img */>}}
+```{.markdown shortcodes=false}
+{{< photo-gallery img/ >}}
 ```
 
-{{< photo-gallery img >}}
+{{< photo-gallery img/ >}}
 
 ## 4 columns via shortcode argument
 
 Override `columns` for a single gallery call without changing the page defaults:
 
-```markdown
-{{</* photo-gallery img columns=4 gap=20 id="five-col" */>}}
+```{.markdown shortcodes=false}
+{{< photo-gallery img/ columns=4 gap=20 id="five-col" >}}
 ```
 
-{{< photo-gallery img columns=4 gap=20 id="five-col" >}}
+{{< photo-gallery img/ columns=4 gap=20 id="five-col" >}}

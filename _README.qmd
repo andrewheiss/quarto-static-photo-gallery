@@ -54,10 +54,10 @@ extensions:
 
 …and place the shortcode wherever you want the gallery to appear in your document:
 
-```{.markdown}
+```{.markdown shortcodes=false}
 Here are some beautiful photos:
 
-{{</* photo-gallery */>}}
+{{< photo-gallery >}}
 
 And here's some more text.
 ```
@@ -87,16 +87,16 @@ Shortcode arguments take precedence over frontmatter for that call only, so you 
 
 The album folder can also be passed as a bare positional argument:
 
-```markdown
-{{</* photo-gallery img/ */>}}
+```{.markdown shortcodes=false}
+{{< photo-gallery img/ >}}
 ```
 
 Any combination of arguments works:
 
-```{.markdown}
-{{</* photo-gallery img/ layout="masonry" columns=5 gap=8 */>}}
-{{</* photo-gallery portraits/ layout="grid" columns=4 transition="fade" */>}}
-{{</* photo-gallery events/ show-exif=false show-date=false show-download=false */>}}
+```{.markdown shortcodes=false}
+{{< photo-gallery img/ layout="masonry" columns=5 gap=8 >}}
+{{< photo-gallery portraits/ layout="grid" columns=4 transition="fade" >}}
+{{< photo-gallery events/ show-exif=false show-date=false show-download=false >}}
 ```
 
 ## Image folder structure
@@ -192,26 +192,26 @@ The `alt` field in `album.yml` sets the `alt` attribute for both the thumbnail a
 
 You can include multiple galleries on a page by pointing to different folders:
 
-```{.markdown}
+```{.markdown shortcodes=false}
 ## Travel Photos
 
-{{</* photo-gallery travel/ */>}}
+{{< photo-gallery travel/ >}}
 
 ## Portraits
 
-{{</* photo-gallery portraits/ layout="grid" columns=4 */>}}
+{{< photo-gallery portraits/ layout="grid" columns=4 >}}
 ```
 
 You can pass an `id` value too, which can be helpful if you want to target it with CSS:
 
-```{.markdown}
+```{.markdown shortcodes=false}
 ## Travel Photos
 
-{{</* photo-gallery travel/ id="travel" */>}}
+{{< photo-gallery travel/ id="travel" >}}
 
 ## Portraits
 
-{{</* photo-gallery portraits/ layout="grid" columns=4 id="portraits" */>}}
+{{< photo-gallery portraits/ layout="grid" columns=4 id="portraits" >}}
 ```
 
 ## Credits
