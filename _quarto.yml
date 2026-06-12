@@ -26,6 +26,10 @@ website:
 format:
   html:
     theme:
-      light: cosmo
-      dark: solar
+      light: 
+        - zephyr
+        - brand
+      dark: 
+        - solar
+        - brand
     toc: false
