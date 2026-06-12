@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "justified.html",
+    "href": "justified.html",
+    "title": "Justified Layout",
+    "section": "",
+    "text": "The justified layout fills each row to the full container width at a consistent height, similar to Google Photos or Flickr. Set thumbnail-height to control the target row height in pixels.\nThe frontmatter above sets defaults for this page. Options set there apply to every {{&lt; photo-gallery &gt;}} call on the page unless overridden by a shortcode argument."
+  },
+  {
+    "objectID": "justified.html#with-exif-metadata",
+    "href": "justified.html#with-exif-metadata",
+    "title": "Justified Layout",
+    "section": "With EXIF metadata",
+    "text": "With EXIF metadata\nWith show-exif: true and show-date: true, the lightbox caption area shows a dot-separated summary of whatever EXIF fields are present — date, aperture, shutter speed, focal length, ISO, and camera body. Click any image to see it.\n\n\n\n\nAl-Aqsa2009-08-30T09:52:01 · f/11 · 1/400s · 18mm · ISO 200 · Canon EOS DIGITAL REBEL XTiAl-Aqsa mosque in Jerusalem Photo by Andrew Heiss\n\n\n\nBooks2025-03-13A wall of books Photo by Peter Thomas on Unsplash\n\n\n\nBread2018-08-08A stack of sliced bread Photo by Rodolfo Marques on Unsplash\n\n\n\nBridal Veil Falls2019-06-17Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash\n\n\n\ncairo.jpg2024-09-29A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash\n\n\n\nCapitol Reef2022-06-2Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash\n\n\n\nDoha2023-05-04West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash\n\n\n\nWater tower2021-10-07Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash\n\n\n\nFanous2008-08-31T13:04:14 · f/8 · 1/250s · 39mm · ISO 800 · Canon EOS DIGITAL REBEL XTiRamandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nGrand Canyon2023-06-07T10:56:09 · f/1.6 · 1/4651s · 5mm · ISO 50 · Apple iPhone 13The Grand Canyon in Arizona Photo by Andrew Heiss\n\n\n\nIce castle2011-01-15T15:22:42 · f/11 · 1/320s · 21mm · ISO 100 · Canon EOS DIGITAL REBEL XTiIce castle in Midway, Utah Photo by Andrew Heiss\n\n\n\nMARTA2023-10-09MARTA train in Atlanta, Georgia Photo by Levi on Unsplash\n\n\n\nNauvoo Temple2023-06-23T20:12:38 · f/1.6 · 1/668s · 5mm · ISO 50 · Apple iPhone 13LDS temple in Nauvoo, Illinois Photo by Andrew Heiss\n\n\n\nPyramid (landscape)2008-10-06T01:52:41 · f/18 · 1/500s · 35mm · ISO 400 · Canon EOS DIGITAL REBEL XTiGreat Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nPyramid2009-01-08T01:39:27 · f/10 · 1/200s · 55mm · ISO 100 · Canon EOS DIGITAL REBEL XTiPyramid in Giza, Cairo, Egypt Photo by Andrew Heiss\n\n\n\nColosseum2019-04-23The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash\n\n\n\nMt. Timpanogos2021-12-19Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash"
+  },
+  {
+    "objectID": "justified.html#shortcode-arguments-override-frontmatter",
+    "href": "justified.html#shortcode-arguments-override-frontmatter",
+    "title": "Justified Layout",
+    "section": "Shortcode arguments override frontmatter",
+    "text": "Shortcode arguments override frontmatter\nAny configuration option can be passed directly to the shortcode. Shortcode arguments take precedence over frontmatter for that call only, so you can set page-wide defaults and override per gallery as needed.\nHere the same album is rendered with EXIF hidden, the download button removed, and a fade transition instead of the default zoom. A unique id is required when pointing two galleries at the same album with otherwise identical settings:\n{{&lt; photo-gallery img/ show-exif=false show-date=false show-download=false transition=\"fade\" id=\"no-exif\" &gt;}}\n\n\n\n\nAl-AqsaAl-Aqsa mosque in Jerusalem Photo by Andrew Heiss\n\n\n\nBooksA wall of books Photo by Peter Thomas on Unsplash\n\n\n\nBreadA stack of sliced bread Photo by Rodolfo Marques on Unsplash\n\n\n\nBridal Veil FallsBridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash\n\n\n\ncairo.jpgA felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash\n\n\n\nCapitol ReefHickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash\n\n\n\nDohaWest Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash\n\n\n\nWater towerLucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash\n\n\n\nFanousRamandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nGrand CanyonThe Grand Canyon in Arizona Photo by Andrew Heiss\n\n\n\nIce castleIce castle in Midway, Utah Photo by Andrew Heiss\n\n\n\nMARTAMARTA train in Atlanta, Georgia Photo by Levi on Unsplash\n\n\n\nNauvoo TempleLDS temple in Nauvoo, Illinois Photo by Andrew Heiss\n\n\n\nPyramid (landscape)Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nPyramidPyramid in Giza, Cairo, Egypt Photo by Andrew Heiss\n\n\n\nColosseumThe Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash\n\n\n\nMt. TimpanogosMt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash"
+  },
+  {
+    "objectID": "masonry.html",
+    "href": "masonry.html",
+    "title": "Masonry Layout",
+    "section": "",
+    "text": "The masonry layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions."
+  },
+  {
+    "objectID": "masonry.html#columns-frontmatter-default",
+    "href": "masonry.html#columns-frontmatter-default",
+    "title": "Masonry Layout",
+    "section": "5 columns (frontmatter default)",
+    "text": "5 columns (frontmatter default)\nPass the album folder as a positional argument; all other settings come from the frontmatter defaults above:\n{{&lt; photo-gallery img &gt;}}\n\n\n\n\nAl-Aqsa2009-08-30T09:52:01 · f/11 · 1/400s · 18mm · ISO 200 · Canon EOS DIGITAL REBEL XTiAl-Aqsa mosque in Jerusalem Photo by Andrew Heiss\n\n\n\nBooks2025-03-13A wall of books Photo by Peter Thomas on Unsplash\n\n\n\nBread2018-08-08A stack of sliced bread Photo by Rodolfo Marques on Unsplash\n\n\n\nBridal Veil Falls2019-06-17Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash\n\n\n\ncairo.jpg2024-09-29A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash\n\n\n\nCapitol Reef2022-06-2Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash\n\n\n\nDoha2023-05-04West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash\n\n\n\nWater tower2021-10-07Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash\n\n\n\nFanous2008-08-31T13:04:14 · f/8 · 1/250s · 39mm · ISO 800 · Canon EOS DIGITAL REBEL XTiRamandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nGrand Canyon2023-06-07T10:56:09 · f/1.6 · 1/4651s · 5mm · ISO 50 · Apple iPhone 13The Grand Canyon in Arizona Photo by Andrew Heiss\n\n\n\nIce castle2011-01-15T15:22:42 · f/11 · 1/320s · 21mm · ISO 100 · Canon EOS DIGITAL REBEL XTiIce castle in Midway, Utah Photo by Andrew Heiss\n\n\n\nMARTA2023-10-09MARTA train in Atlanta, Georgia Photo by Levi on Unsplash\n\n\n\nNauvoo Temple2023-06-23T20:12:38 · f/1.6 · 1/668s · 5mm · ISO 50 · Apple iPhone 13LDS temple in Nauvoo, Illinois Photo by Andrew Heiss\n\n\n\nPyramid (landscape)2008-10-06T01:52:41 · f/18 · 1/500s · 35mm · ISO 400 · Canon EOS DIGITAL REBEL XTiGreat Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nPyramid2009-01-08T01:39:27 · f/10 · 1/200s · 55mm · ISO 100 · Canon EOS DIGITAL REBEL XTiPyramid in Giza, Cairo, Egypt Photo by Andrew Heiss\n\n\n\nColosseum2019-04-23The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash\n\n\n\nMt. Timpanogos2021-12-19Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash"
+  },
+  {
+    "objectID": "masonry.html#columns-via-shortcode-argument",
+    "href": "masonry.html#columns-via-shortcode-argument",
+    "title": "Masonry Layout",
+    "section": "4 columns via shortcode argument",
+    "text": "4 columns via shortcode argument\nOverride columns for a single gallery call without changing the page defaults:\n{{&lt; photo-gallery img columns=4 gap=20 id=\"five-col\" &gt;}}\n\n\n\n\nAl-Aqsa2009-08-30T09:52:01 · f/11 · 1/400s · 18mm · ISO 200 · Canon EOS DIGITAL REBEL XTiAl-Aqsa mosque in Jerusalem Photo by Andrew Heiss\n\n\n\nBooks2025-03-13A wall of books Photo by Peter Thomas on Unsplash\n\n\n\nBread2018-08-08A stack of sliced bread Photo by Rodolfo Marques on Unsplash\n\n\n\nBridal Veil Falls2019-06-17Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash\n\n\n\ncairo.jpg2024-09-29A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash\n\n\n\nCapitol Reef2022-06-2Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash\n\n\n\nDoha2023-05-04West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash\n\n\n\nWater tower2021-10-07Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash\n\n\n\nFanous2008-08-31T13:04:14 · f/8 · 1/250s · 39mm · ISO 800 · Canon EOS DIGITAL REBEL XTiRamandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nGrand Canyon2023-06-07T10:56:09 · f/1.6 · 1/4651s · 5mm · ISO 50 · Apple iPhone 13The Grand Canyon in Arizona Photo by Andrew Heiss\n\n\n\nIce castle2011-01-15T15:22:42 · f/11 · 1/320s · 21mm · ISO 100 · Canon EOS DIGITAL REBEL XTiIce castle in Midway, Utah Photo by Andrew Heiss\n\n\n\nMARTA2023-10-09MARTA train in Atlanta, Georgia Photo by Levi on Unsplash\n\n\n\nNauvoo Temple2023-06-23T20:12:38 · f/1.6 · 1/668s · 5mm · ISO 50 · Apple iPhone 13LDS temple in Nauvoo, Illinois Photo by Andrew Heiss\n\n\n\nPyramid (landscape)2008-10-06T01:52:41 · f/18 · 1/500s · 35mm · ISO 400 · Canon EOS DIGITAL REBEL XTiGreat Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nPyramid2009-01-08T01:39:27 · f/10 · 1/200s · 55mm · ISO 100 · Canon EOS DIGITAL REBEL XTiPyramid in Giza, Cairo, Egypt Photo by Andrew Heiss\n\n\n\nColosseum2019-04-23The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash\n\n\n\nMt. Timpanogos2021-12-19Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash"
+  },
+  {
+    "objectID": "grid.html",
+    "href": "grid.html",
+    "title": "Grid Layout",
+    "section": "",
+    "text": "The grid layout uses CSS Grid with uniform square cells and object-fit: cover — all thumbnails are the same size regardless of the source image’s aspect ratio. Good for portfolios where visual consistency matters more than showing full frames."
+  },
+  {
+    "objectID": "grid.html#column-grid-with-dot-navigation",
+    "href": "grid.html#column-grid-with-dot-navigation",
+    "title": "Grid Layout",
+    "section": "5-column grid with dot navigation",
+    "text": "5-column grid with dot navigation\nWith show-bullets: true, the PhotoSwipe lightbox shows a dot indicator at the bottom. Click any image to see it:\n\n\n\n\nAl-Aqsa2009-08-30T09:52:01 · f/11 · 1/400s · 18mm · ISO 200 · Canon EOS DIGITAL REBEL XTiAl-Aqsa mosque in Jerusalem Photo by Andrew Heiss\n\n\n\nBooks2025-03-13A wall of books Photo by Peter Thomas on Unsplash\n\n\n\nBread2018-08-08A stack of sliced bread Photo by Rodolfo Marques on Unsplash\n\n\n\nBridal Veil Falls2019-06-17Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash\n\n\n\ncairo.jpg2024-09-29A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash\n\n\n\nCapitol Reef2022-06-2Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash\n\n\n\nDoha2023-05-04West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash\n\n\n\nWater tower2021-10-07Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash\n\n\n\nFanous2008-08-31T13:04:14 · f/8 · 1/250s · 39mm · ISO 800 · Canon EOS DIGITAL REBEL XTiRamandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nGrand Canyon2023-06-07T10:56:09 · f/1.6 · 1/4651s · 5mm · ISO 50 · Apple iPhone 13The Grand Canyon in Arizona Photo by Andrew Heiss\n\n\n\nIce castle2011-01-15T15:22:42 · f/11 · 1/320s · 21mm · ISO 100 · Canon EOS DIGITAL REBEL XTiIce castle in Midway, Utah Photo by Andrew Heiss\n\n\n\nMARTA2023-10-09MARTA train in Atlanta, Georgia Photo by Levi on Unsplash\n\n\n\nNauvoo Temple2023-06-23T20:12:38 · f/1.6 · 1/668s · 5mm · ISO 50 · Apple iPhone 13LDS temple in Nauvoo, Illinois Photo by Andrew Heiss\n\n\n\nPyramid (landscape)2008-10-06T01:52:41 · f/18 · 1/500s · 35mm · ISO 400 · Canon EOS DIGITAL REBEL XTiGreat Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nPyramid2009-01-08T01:39:27 · f/10 · 1/200s · 55mm · ISO 100 · Canon EOS DIGITAL REBEL XTiPyramid in Giza, Cairo, Egypt Photo by Andrew Heiss\n\n\n\nColosseum2019-04-23The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash\n\n\n\nMt. Timpanogos2021-12-19Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash"
+  },
+  {
+    "objectID": "grid.html#minimal-gallery-no-metadata-no-download",
+    "href": "grid.html#minimal-gallery-no-metadata-no-download",
+    "title": "Grid Layout",
+    "section": "Minimal gallery — no metadata, no download",
+    "text": "Minimal gallery — no metadata, no download\nUse shortcode arguments to strip the gallery down for contexts where you want clean presentation without any UI chrome. show-exif=false hides camera data, show-download=false removes the download button from the lightbox toolbar, and transition=\"none\" disables the open/close animation:\n{{&lt; photo-gallery img/ columns=5 show-exif=false show-date=false show-download=false show-bullets=false transition=\"none\" id=\"minimal\" &gt;}}\n\n\n\n\nAl-AqsaAl-Aqsa mosque in Jerusalem Photo by Andrew Heiss\n\n\n\nBooksA wall of books Photo by Peter Thomas on Unsplash\n\n\n\nBreadA stack of sliced bread Photo by Rodolfo Marques on Unsplash\n\n\n\nBridal Veil FallsBridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash\n\n\n\ncairo.jpgA felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash\n\n\n\nCapitol ReefHickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash\n\n\n\nDohaWest Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash\n\n\n\nWater towerLucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash\n\n\n\nFanousRamandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nGrand CanyonThe Grand Canyon in Arizona Photo by Andrew Heiss\n\n\n\nIce castleIce castle in Midway, Utah Photo by Andrew Heiss\n\n\n\nMARTAMARTA train in Atlanta, Georgia Photo by Levi on Unsplash\n\n\n\nNauvoo TempleLDS temple in Nauvoo, Illinois Photo by Andrew Heiss\n\n\n\nPyramid (landscape)Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss\n\n\n\nPyramidPyramid in Giza, Cairo, Egypt Photo by Andrew Heiss\n\n\n\nColosseumThe Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash\n\n\n\nMt. TimpanogosMt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Static photo galleries for Quarto",
+    "section": "",
+    "text": "This Quarto extension lets you point to a folder of images and automatically create a static photo gallery using PhotoSwipe. Through some Python magic, the extension automatically generates thumbnails, extracts metadata (including EXIF data), and builds a PhotoSwipe-based gallery. Place the gallery wherever you want on your page with a shortcode.\nPut simply, it lets you go from this:\n\n…to this:"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Static photo galleries for Quarto",
+    "section": "",
+    "text": "This Quarto extension lets you point to a folder of images and automatically create a static photo gallery using PhotoSwipe. Through some Python magic, the extension automatically generates thumbnails, extracts metadata (including EXIF data), and builds a PhotoSwipe-based gallery. Place the gallery wherever you want on your page with a shortcode.\nPut simply, it lets you go from this:\n\n…to this:"
+  },
+  {
+    "objectID": "index.html#demo",
+    "href": "index.html#demo",
+    "title": "Static photo galleries for Quarto",
+    "section": "Demo",
+    "text": "Demo\nVisit the demo website to see it in action (and see all the different possible settings)."
+  },
+  {
+    "objectID": "index.html#requirements",
+    "href": "index.html#requirements",
+    "title": "Static photo galleries for Quarto",
+    "section": "Requirements",
+    "text": "Requirements\nIn addition to Quarto, you need to install uv, which will allow you to install a project-specific version of Python and all other necessary packages.\nFollow the installation instructions for your specific operating system."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Static photo galleries for Quarto",
+    "section": "Installation",
+    "text": "Installation\nMake sure you install uv first!\nTo install this extension in your current directory (or into the Quarto project that you’re currently working in), use the following terminal command:\n\n\nTerminal\n\nquarto add andrewheiss/quarto-static-photo-gallery\n\nThis will install the extension in the _extensions subdirectory. If you’re using version control, you will want to check in this directory."
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "Static photo galleries for Quarto",
+    "section": "Usage",
+    "text": "Usage\nAdd settings to your document’s YAML frontmatter…\n---\ntitle: My Photos\nextensions:\n  photo-gallery:\n    # Path to your image folder\n    album-files: img\n    # justified | masonry | grid\n    layout: justified\n    # Target row height in px (in the justified layout)\n    thumbnail-height: 300\n    # gap between images in px\n    gap: 5\n---\n…and place the shortcode wherever you want the gallery to appear in your document:\nHere are some beautiful photos:\n\n{{&lt; photo-gallery &gt;}}\n\nAnd here's some more text."
+  },
+  {
+    "objectID": "index.html#configuration",
+    "href": "index.html#configuration",
+    "title": "Static photo galleries for Quarto",
+    "section": "Configuration",
+    "text": "Configuration\nThere are lots of possible options! Each of these can be set either in frontmatter under extensions: photo-gallery: or as arguments in the shortcode.\n\n\n\nOption\nDefault\nDescription\n\n\n\n\nalbum-files\nimg\nPath to the image folder (relative to the .qmd file)\n\n\nlayout\njustified\nGallery layout: justified, masonry, or grid\n\n\nthumbnail-height\n300\nTarget row height in px (drives justified layout; also the thumbnail resize target)\n\n\nthumbnail-max-width\n1200\nMax thumbnail long edge in px\n\n\nthumbnail-quality\n85\nJPEG quality for generated thumbnails (1–95)\n\n\ncolumns\n3\nNumber of columns for masonry and grid layouts\n\n\ngap\n4\nGap between images in px\n\n\nshow-exif\ntrue\nShow camera/lens/exposure data in the caption area\n\n\nshow-date\ntrue\nShow the date taken in the caption area\n\n\ndate-format\nYYYY-MM-DD\nDay.js format string for date-only timestamps\n\n\ndatetime-format\nYYYY-MM-DDTHH:mm\nDay.js format string for timestamps that include a time component\n\n\nshow-download\ntrue\nShow a download button in the PhotoSwipe lightbox toolbar\n\n\ntransition\nzoom\nLightbox open/close animation: zoom, fade, or none\n\n\nshow-bullets\nfalse\nShow dot navigation indicator in the PhotoSwipe lightbox\n\n\n\nShortcode arguments take precedence over frontmatter for that call only, so you can set global defaults in frontmatter and override per-gallery as needed.\nThe album folder can also be passed as a bare positional argument:\n{{&lt; photo-gallery img/ &gt;}}\nAny combination of arguments works:\n{{&lt; photo-gallery img/ layout=\"masonry\" columns=5 gap=8 &gt;}}\n{{&lt; photo-gallery portraits/ layout=\"grid\" columns=4 transition=\"fade\" &gt;}}\n{{&lt; photo-gallery events/ show-exif=false show-date=false show-download=false &gt;}}"
+  },
+  {
+    "objectID": "index.html#image-folder-structure",
+    "href": "index.html#image-folder-structure",
+    "title": "Static photo galleries for Quarto",
+    "section": "Image folder structure",
+    "text": "Image folder structure\nThe extension will process a folder of images without looking in subfolders. It will automatically generate thumbnail versions in thumbs/. It will use a file named album.yml for additional metadata if present.\nimg/\n├── photo1.jpg     ← a picture\n├── photo2.jpg     ← a picture\n├── album.yml      ← optional per-image metadata\n└── thumbs/        ← auto-generated on first render\n    ├── photo1.jpg\n    └── photo2.jpg\nSupported image formats: .jpg / .jpeg, .png, .webp, .tif / .tiff\nGenerated thumbnails are put in a thumbs/ subfolder inside your image folder and are only regenerated if the source image is newer than the existing thumbnail. You can safely add thumbs/ to .gitignore and regenerate at build time, or you can commit the thumbnails to skip the generation step on subsequent renders."
+  },
+  {
+    "objectID": "index.html#per-image-metadata-album.yml",
+    "href": "index.html#per-image-metadata-album.yml",
+    "title": "Static photo galleries for Quarto",
+    "section": "Per-image metadata (album.yml)",
+    "text": "Per-image metadata (album.yml)\nPlace an album.yml file inside your image folder to override titles, descriptions, dates, or alt text for specific images. Any field you omit falls back to EXIF data or a title derived from the filename.\n# img/album.yml\nimages:\n  photo1.jpg:\n    title: \"Horseshoe Bend at Sunset\"\n    description: \"Shot from the rim with a wide-angle lens\"\n    date: \"2024-08-14\"   # overrides EXIF date\n\n  photo2.jpg:\n    title: \"Forest Trail\"\n    description: \"Photo by [Jane Smith](https://example.com) · CC BY 4.0\"\n    alt: \"A narrow dirt trail winding through a dense old-growth forest in autumn\"\n    # date comes from EXIF"
+  },
+  {
+    "objectID": "index.html#captions",
+    "href": "index.html#captions",
+    "title": "Static photo galleries for Quarto",
+    "section": "Captions",
+    "text": "Captions\nCaptions appear in two places: as a hover overlay on each thumbnail, and in the footer of the lightbox when you navigate the full-size images. Each caption has up to three lines:\nTitle\nMetadata\nDescription\n\nTitle: The title comes from the album.yml title; if not present, the filename is used instead\nMetadata: Metadata comes from EXIF data in the file, if present. It appears as a dot-separated string like this:\n2026-06-12 · f/1.8 · 1/200s · 85mm · ISO 800 · Nikon D7200\nDates are stored as canonical ISO 8601 strings: 2026-06-12T14:09 when the date includes a time, and 2026-06-12 when only a date is available. The date-format and datetime-format options control display using Day.js format tokens.\nThe date field in album.yml accepts ISO 8601 date or datetime strings:\nimages:\n  photo1.jpg:\n    date: \"2026-06-12\"\n  photo2.jpg:\n    date: \"2026-06-12T14:09\"\nDescription: You can use some inline Markdown in the description field in album.yml. Whatever you do needs to live inside a single paragraph, so you can use things like links, bold, italic, etc. and not things like lists, headings, etc.\n\nYou can override any caption element with CSS in your document or theme. The same class names apply in both the thumbnail overlay and the lightbox footer; use the .pswp__pg-caption parent selector to target the lightbox only.\n/* Thumbnail overlay caption */\n.pg-caption     { /* overlay container  */ }\n.pg-title       { /* image title        */ }\n.pg-meta        { /* date + EXIF stuff  */ }\n.pg-description { /* description text   */ }\n\n/* Lightbox footer caption */\n.pswp__pg-caption                 { /* lightbox caption container */ }\n.pswp__pg-caption .pg-title       { /* image title                */ }\n.pswp__pg-caption .pg-meta        { /* lightbox caption container */ }\n.pswp__pg-caption .pg-description { /* lightbox caption container */ }"
+  },
+  {
+    "objectID": "index.html#alt-text",
+    "href": "index.html#alt-text",
+    "title": "Static photo galleries for Quarto",
+    "section": "Alt text",
+    "text": "Alt text\nThe alt field in album.yml sets the alt attribute for both the thumbnail and the full-size lightbox image. If alt is omitted, the plain-text, markdown-free content of description is used instead. But try not to rely on that! Alt text should describe what is depicted instead of just replicating the caption—see Section508.gov’s guide for additional examples."
+  },
+  {
+    "objectID": "index.html#multiple-galleries-per-page",
+    "href": "index.html#multiple-galleries-per-page",
+    "title": "Static photo galleries for Quarto",
+    "section": "Multiple galleries per page",
+    "text": "Multiple galleries per page\nYou can include multiple galleries on a page by pointing to different folders:\n## Travel Photos\n\n{{&lt; photo-gallery travel/ &gt;}}\n\n## Portraits\n\n{{&lt; photo-gallery portraits/ layout=\"grid\" columns=4 &gt;}}\nYou can pass an id value too, which can be helpful if you want to target it with CSS:\n## Travel Photos\n\n{{&lt; photo-gallery travel/ id=\"travel\" &gt;}}\n\n## Portraits\n\n{{&lt; photo-gallery portraits/ layout=\"grid\" columns=4 id=\"portraits\" &gt;}}"
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Static photo galleries for Quarto",
+    "section": "Credits",
+    "text": "Credits\nThe example images are used under the Unsplash license:\n\nMountains\nForest\nOcean\nCity at night\nDesert\nFlowers\nWaterfall\nSnow\nCanyon\nLake"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Static photo galleries for Quarto",
+    "section": "License",
+    "text": "License\nMIT"
+  }
+]

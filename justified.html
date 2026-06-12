@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Justified Layout – Quarto static photo gallery demo</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4d72738a521f03bda770c6fbcc444206.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe.umd.min.js"></script>
+<script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe-lightbox.umd.min.js"></script>
+<script src="site_libs/quarto-contrib/photo-gallery-0.1.0/dayjs.min.js"></script>
+<script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photo-gallery.js"></script>
+<link href="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/photo-gallery-0.1.0/photo-gallery.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Quarto static photo gallery demo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">README</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./justified.html" aria-current="page"> 
+<span class="menu-text">Justified</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./masonry.html"> 
+<span class="menu-text">Masonry</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./grid.html"> 
+<span class="menu-text">Grid</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/andrewheiss/quarto-static-photo-gallery"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Justified Layout</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The <strong>justified</strong> layout fills each row to the full container width at a consistent height, similar to Google Photos or Flickr. Set <code>thumbnail-height</code> to control the target row height in pixels.</p>
+<p>The frontmatter above sets defaults for this page. Options set there apply to every <code>{{&lt; photo-gallery &gt;}}</code> call on the page unless overridden by a shortcode argument.</p>
+<section id="with-exif-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="with-exif-metadata">With EXIF metadata</h2>
+<p>With <code>show-exif: true</code> and <code>show-date: true</code>, the lightbox caption area shows a dot-separated summary of whatever EXIF fields are present — date, aperture, shutter speed, focal length, ISO, and camera body. Click any image to see it.</p>
+<div class="photo-gallery" data-layout="justified" style="--pg-gap: 5px; --pg-row-height: 280px; --pg-columns: 3;">
+<div class="pswp-gallery" id="pg-1" data-download="true" data-transition="zoom" data-bullets="false">
+<a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-1-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
+<img src="img/thumbs/al-aqsa.jpg" alt="Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-1"><span class="pg-title">Al-Aqsa</span><span class="pg-meta"><time datetime="2009-08-30T09:52:01" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2009-08-30T09:52:01</time> · f/11 · 1/400s · 18mm · ISO 200 · Canon EOS DIGITAL REBEL XTi</span><span class="pg-description">Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/books.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Books — A wall of books Photo by Peter Thomas on Unsplash" aria-describedby="pg-1-cap-2" data-pg-desc="A wall of books<br>Photo by <a href=&quot;https://unsplash.com/@lifeof_peter_&quot;>Peter Thomas</a> on <a href=&quot;https://unsplash.com/photos/books-fill-a-wooden-bookshelf-he4j9YyWFoo&quot;>Unsplash</a>">
+<img src="img/thumbs/books.jpg" alt="A wall of books Photo by Peter Thomas on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-2"><span class="pg-title">Books</span><span class="pg-meta"><time datetime="2025-03-13" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2025-03-13</time></span><span class="pg-description">A wall of books Photo by Peter Thomas on Unsplash</span></div>
+</a>
+<a href="img/breaad.jpg" data-pswp-width="2400" data-pswp-height="3000" data-cropped="false" class="pg-item" style="flex-grow: 0.8000;" title="Bread — A stack of sliced bread Photo by Rodolfo Marques on Unsplash" aria-describedby="pg-1-cap-3" data-pg-desc="A stack of sliced bread<br>Photo by <a href=&quot;https://unsplash.com/@rodolfomarques&quot;>Rodolfo Marques</a> on <a href=&quot;https://unsplash.com/photos/sliced-breads-GzBO_o0RvEg&quot;>Unsplash</a>">
+<img src="img/thumbs/breaad.jpg" alt="A stack of sliced bread Photo by Rodolfo Marques on Unsplash" width="240" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-3"><span class="pg-title">Bread</span><span class="pg-meta"><time datetime="2018-08-08" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2018-08-08</time></span><span class="pg-description">A stack of sliced bread Photo by Rodolfo Marques on Unsplash</span></div>
+</a>
+<a href="img/bridal-veil.jpg" data-pswp-width="2400" data-pswp-height="3600" data-cropped="false" class="pg-item" style="flex-grow: 0.6667;" title="Bridal Veil Falls — Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash" aria-describedby="pg-1-cap-4" data-pg-desc="Bridal Veil Falls near Provo, Utah<br>Photo by <a href=&quot;https://unsplash.com/@psalms&quot;>David Wirzba</a> on <a href=&quot;https://unsplash.com/photos/photo-of-waterfalls-during-daytime-hZuSXNKCyzE&quot;>Unsplash</a>">
+<img src="img/thumbs/bridal-veil.jpg" alt="Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash" width="200" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-4"><span class="pg-title">Bridal Veil Falls</span><span class="pg-meta"><time datetime="2019-06-17" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2019-06-17</time></span><span class="pg-description">Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash</span></div>
+</a>
+<a href="img/cairo.jpg" data-pswp-width="1910" data-pswp-height="3392" data-cropped="false" class="pg-item" style="flex-grow: 0.5631;" title="cairo.jpg — A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash" aria-describedby="pg-1-cap-5" data-pg-desc="A felucca on the Nile in front of Cairo Tower in Egypt<br>Photo by <a href=&quot;https://unsplash.com/@canismajoris&quot;>Hatem Ramadan</a> on <a href=&quot;https://unsplash.com/photos/a-sailboat-on-the-water-with-a-city-in-the-background-59RY-ykUIAg&quot;>Unsplash</a>">
+<img src="img/thumbs/cairo.jpg" alt="A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash" width="168" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-5"><span class="pg-title">cairo.jpg</span><span class="pg-meta"><time datetime="2024-09-29" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2024-09-29</time></span><span class="pg-description">A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash</span></div>
+</a>
+<a href="img/capitol-reef.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Capitol Reef — Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash" aria-describedby="pg-1-cap-6" data-pg-desc="Hickman Bridge in Capitol Reef National Park, Utah<br>Photo by <a href=&quot;https://unsplash.com/@lancetraveler60&quot;>Lori Stevens</a> on <a href=&quot;https://unsplash.com/photos/a-large-rock-formation-with-an-arch-in-the-middle-of-it-Kdu1gxxua5A&quot;>Unsplash</a>">
+<img src="img/thumbs/capitol-reef.jpg" alt="Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-6"><span class="pg-title">Capitol Reef</span><span class="pg-meta"><time datetime="2022-06-2" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2022-06-2</time></span><span class="pg-description">Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash</span></div>
+</a>
+<a href="img/doha.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Doha — West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash" aria-describedby="pg-1-cap-7" data-pg-desc="West Bay in Doha, Qatar<br>Photo by <a href=&quot;https://unsplash.com/@akbarnemati&quot;>Akbar Nemati</a> on <a href=&quot;https://unsplash.com/photos/a-city-skyline-with-a-full-moon-in-the-sky-Q8NuHm4PbXc&quot;>Unsplash</a>">
+<img src="img/thumbs/doha.jpg" alt="West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-7"><span class="pg-title">Doha</span><span class="pg-meta"><time datetime="2023-05-04" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2023-05-04</time></span><span class="pg-description">West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash</span></div>
+</a>
+<a href="img/durham.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Water tower — Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash" aria-describedby="pg-1-cap-8" data-pg-desc="Lucky Strike water tower in Durham, North Carolina<br>Photo by <a href=&quot;https://unsplash.com/@colincollect&quot;>Colin Rowley</a> on <a href=&quot;https://unsplash.com/photos/a-water-tower-in-the-middle-of-a-town-kKegdvaaHvo&quot;>Unsplash</a>">
+<img src="img/thumbs/durham.jpg" alt="Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-8"><span class="pg-title">Water tower</span><span class="pg-meta"><time datetime="2021-10-07" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2021-10-07</time></span><span class="pg-description">Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash</span></div>
+</a>
+<a href="img/fanous.jpg" data-pswp-width="1872" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.7800;" title="Fanous — Ramandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss" aria-describedby="pg-1-cap-9" data-pg-desc="Ramandan fanous (lantern) in Cairo, Egypt<br>Photo by Andrew Heiss">
+<img src="img/thumbs/fanous.jpg" alt="Ramandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss" width="234" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-9"><span class="pg-title">Fanous</span><span class="pg-meta"><time datetime="2008-08-31T13:04:14" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2008-08-31T13:04:14</time> · f/8 · 1/250s · 39mm · ISO 800 · Canon EOS DIGITAL REBEL XTi</span><span class="pg-description">Ramandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/grand-canyon.jpg" data-pswp-width="2400" data-pswp-height="1800" data-cropped="false" class="pg-item" style="flex-grow: 1.3333;" title="Grand Canyon — The Grand Canyon in Arizona Photo by Andrew Heiss" aria-describedby="pg-1-cap-10" data-pg-desc="The Grand Canyon in Arizona<br>Photo by Andrew Heiss">
+<img src="img/thumbs/grand-canyon.jpg" alt="The Grand Canyon in Arizona Photo by Andrew Heiss" width="400" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-10"><span class="pg-title">Grand Canyon</span><span class="pg-meta"><time datetime="2023-06-07T10:56:09" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2023-06-07T10:56:09</time> · f/1.6 · 1/4651s · 5mm · ISO 50 · Apple iPhone 13</span><span class="pg-description">The Grand Canyon in Arizona Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/ice.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.6667;" title="Ice castle — Ice castle in Midway, Utah Photo by Andrew Heiss" aria-describedby="pg-1-cap-11" data-pg-desc="Ice castle in Midway, Utah<br>Photo by Andrew Heiss">
+<img src="img/thumbs/ice.jpg" alt="Ice castle in Midway, Utah Photo by Andrew Heiss" width="200" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-11"><span class="pg-title">Ice castle</span><span class="pg-meta"><time datetime="2011-01-15T15:22:42" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2011-01-15T15:22:42</time> · f/11 · 1/320s · 21mm · ISO 100 · Canon EOS DIGITAL REBEL XTi</span><span class="pg-description">Ice castle in Midway, Utah Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/marta.jpg" data-pswp-width="2400" data-pswp-height="4267" data-cropped="false" class="pg-item" style="flex-grow: 0.5625;" title="MARTA — MARTA train in Atlanta, Georgia Photo by Levi on Unsplash" aria-describedby="pg-1-cap-12" data-pg-desc="MARTA train in Atlanta, Georgia<br>Photo by <a href=&quot;https://unsplash.com/@levipurk&quot;>Levi</a> on <a href=&quot;https://unsplash.com/photos/a-silver-train-traveling-over-a-bridge-under-a-blue-sky-jXfCtN7hzZY&quot;>Unsplash</a>">
+<img src="img/thumbs/marta.jpg" alt="MARTA train in Atlanta, Georgia Photo by Levi on Unsplash" width="168" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-12"><span class="pg-title">MARTA</span><span class="pg-meta"><time datetime="2023-10-09" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2023-10-09</time></span><span class="pg-description">MARTA train in Atlanta, Georgia Photo by Levi on Unsplash</span></div>
+</a>
+<a href="img/nauvoo.jpg" data-pswp-width="1800" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.7500;" title="Nauvoo Temple — LDS temple in Nauvoo, Illinois Photo by Andrew Heiss" aria-describedby="pg-1-cap-13" data-pg-desc="LDS temple in Nauvoo, Illinois<br>Photo by Andrew Heiss">
+<img src="img/thumbs/nauvoo.jpg" alt="LDS temple in Nauvoo, Illinois Photo by Andrew Heiss" width="225" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-13"><span class="pg-title">Nauvoo Temple</span><span class="pg-meta"><time datetime="2023-06-23T20:12:38" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2023-06-23T20:12:38</time> · f/1.6 · 1/668s · 5mm · ISO 50 · Apple iPhone 13</span><span class="pg-description">LDS temple in Nauvoo, Illinois Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/pyramid-landscape.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Pyramid (landscape) — Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss" aria-describedby="pg-1-cap-14" data-pg-desc="Great Pyramid of Giza in Cairo, Egypt<br>Photo by Andrew Heiss">
+<img src="img/thumbs/pyramid-landscape.jpg" alt="Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-14"><span class="pg-title">Pyramid (landscape)</span><span class="pg-meta"><time datetime="2008-10-06T01:52:41" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2008-10-06T01:52:41</time> · f/18 · 1/500s · 35mm · ISO 400 · Canon EOS DIGITAL REBEL XTi</span><span class="pg-description">Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/pyramid.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.6667;" title="Pyramid — Pyramid in Giza, Cairo, Egypt Photo by Andrew Heiss" aria-describedby="pg-1-cap-15" data-pg-desc="Pyramid in Giza, Cairo, Egypt<br>Photo by Andrew Heiss">
+<img src="img/thumbs/pyramid.jpg" alt="Pyramid in Giza, Cairo, Egypt Photo by Andrew Heiss" width="200" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-15"><span class="pg-title">Pyramid</span><span class="pg-meta"><time datetime="2009-01-08T01:39:27" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2009-01-08T01:39:27</time> · f/10 · 1/200s · 55mm · ISO 100 · Canon EOS DIGITAL REBEL XTi</span><span class="pg-description">Pyramid in Giza, Cairo, Egypt Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/rome.jpg" data-pswp-width="2400" data-pswp-height="3000" data-cropped="false" class="pg-item" style="flex-grow: 0.8000;" title="Colosseum — The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash" aria-describedby="pg-1-cap-16" data-pg-desc="The Colosseum in Rome, Italy Photo by <a href=&quot;https://unsplash.com/@spencerdavis&quot;>Spencer Davis</a> on <a href=&quot;https://unsplash.com/photos/aerial-view-of-colosseum-at-rome-italy-ckotRXopwRM&quot;>Unsplash</a>">
+<img src="img/thumbs/rome.jpg" alt="The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash" width="240" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-16"><span class="pg-title">Colosseum</span><span class="pg-meta"><time datetime="2019-04-23" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2019-04-23</time></span><span class="pg-description">The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash</span></div>
+</a>
+<a href="img/timpanogos.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Mt. Timpanogos — Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash" aria-describedby="pg-1-cap-17" data-pg-desc="Mt. Timpanogos from Utah County, Utah<br>Photo by <a href=&quot;https://unsplash.com/@northernstatemedia&quot;>Sonny Mauricio</a> on <a href=&quot;https://unsplash.com/photos/a-snow-covered-mountain-range-with-trees-in-the-foreground-Nv-b4hDOgWY&quot;>Unsplash</a>">
+<img src="img/thumbs/timpanogos.jpg" alt="Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-1-cap-17"><span class="pg-title">Mt. Timpanogos</span><span class="pg-meta"><time datetime="2021-12-19" data-date-format="YYYY-MM-DD" data-datetime-format="YYYY-MM-DDTHH:mm">2021-12-19</time></span><span class="pg-description">Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash</span></div>
+</a>
+</div>
+</div>
+</section>
+<section id="shortcode-arguments-override-frontmatter" class="level2">
+<h2 class="anchored" data-anchor-id="shortcode-arguments-override-frontmatter">Shortcode arguments override frontmatter</h2>
+<p>Any configuration option can be passed directly to the shortcode. Shortcode arguments take precedence over frontmatter for that call only, so you can set page-wide defaults and override per gallery as needed.</p>
+<p>Here the same album is rendered with EXIF hidden, the download button removed, and a <code>fade</code> transition instead of the default <code>zoom</code>. A unique <code>id</code> is required when pointing two galleries at the same album with otherwise identical settings:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ show-exif=false show-date=false show-download=false transition="fade" id="no-exif" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="photo-gallery" data-layout="justified" style="--pg-gap: 5px; --pg-row-height: 280px; --pg-columns: 3;">
+<div class="pswp-gallery" id="pg-no-exif" data-download="false" data-transition="fade" data-bullets="false">
+<a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
+<img src="img/thumbs/al-aqsa.jpg" alt="Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-1"><span class="pg-title">Al-Aqsa</span><span class="pg-description">Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/books.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Books — A wall of books Photo by Peter Thomas on Unsplash" aria-describedby="pg-no-exif-cap-2" data-pg-desc="A wall of books<br>Photo by <a href=&quot;https://unsplash.com/@lifeof_peter_&quot;>Peter Thomas</a> on <a href=&quot;https://unsplash.com/photos/books-fill-a-wooden-bookshelf-he4j9YyWFoo&quot;>Unsplash</a>">
+<img src="img/thumbs/books.jpg" alt="A wall of books Photo by Peter Thomas on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-2"><span class="pg-title">Books</span><span class="pg-description">A wall of books Photo by Peter Thomas on Unsplash</span></div>
+</a>
+<a href="img/breaad.jpg" data-pswp-width="2400" data-pswp-height="3000" data-cropped="false" class="pg-item" style="flex-grow: 0.8000;" title="Bread — A stack of sliced bread Photo by Rodolfo Marques on Unsplash" aria-describedby="pg-no-exif-cap-3" data-pg-desc="A stack of sliced bread<br>Photo by <a href=&quot;https://unsplash.com/@rodolfomarques&quot;>Rodolfo Marques</a> on <a href=&quot;https://unsplash.com/photos/sliced-breads-GzBO_o0RvEg&quot;>Unsplash</a>">
+<img src="img/thumbs/breaad.jpg" alt="A stack of sliced bread Photo by Rodolfo Marques on Unsplash" width="240" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-3"><span class="pg-title">Bread</span><span class="pg-description">A stack of sliced bread Photo by Rodolfo Marques on Unsplash</span></div>
+</a>
+<a href="img/bridal-veil.jpg" data-pswp-width="2400" data-pswp-height="3600" data-cropped="false" class="pg-item" style="flex-grow: 0.6667;" title="Bridal Veil Falls — Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash" aria-describedby="pg-no-exif-cap-4" data-pg-desc="Bridal Veil Falls near Provo, Utah<br>Photo by <a href=&quot;https://unsplash.com/@psalms&quot;>David Wirzba</a> on <a href=&quot;https://unsplash.com/photos/photo-of-waterfalls-during-daytime-hZuSXNKCyzE&quot;>Unsplash</a>">
+<img src="img/thumbs/bridal-veil.jpg" alt="Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash" width="200" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-4"><span class="pg-title">Bridal Veil Falls</span><span class="pg-description">Bridal Veil Falls near Provo, Utah Photo by David Wirzba on Unsplash</span></div>
+</a>
+<a href="img/cairo.jpg" data-pswp-width="1910" data-pswp-height="3392" data-cropped="false" class="pg-item" style="flex-grow: 0.5631;" title="cairo.jpg — A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash" aria-describedby="pg-no-exif-cap-5" data-pg-desc="A felucca on the Nile in front of Cairo Tower in Egypt<br>Photo by <a href=&quot;https://unsplash.com/@canismajoris&quot;>Hatem Ramadan</a> on <a href=&quot;https://unsplash.com/photos/a-sailboat-on-the-water-with-a-city-in-the-background-59RY-ykUIAg&quot;>Unsplash</a>">
+<img src="img/thumbs/cairo.jpg" alt="A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash" width="168" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-5"><span class="pg-title">cairo.jpg</span><span class="pg-description">A felucca on the Nile in front of Cairo Tower in Egypt Photo by Hatem Ramadan on Unsplash</span></div>
+</a>
+<a href="img/capitol-reef.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Capitol Reef — Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash" aria-describedby="pg-no-exif-cap-6" data-pg-desc="Hickman Bridge in Capitol Reef National Park, Utah<br>Photo by <a href=&quot;https://unsplash.com/@lancetraveler60&quot;>Lori Stevens</a> on <a href=&quot;https://unsplash.com/photos/a-large-rock-formation-with-an-arch-in-the-middle-of-it-Kdu1gxxua5A&quot;>Unsplash</a>">
+<img src="img/thumbs/capitol-reef.jpg" alt="Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-6"><span class="pg-title">Capitol Reef</span><span class="pg-description">Hickman Bridge in Capitol Reef National Park, Utah Photo by Lori Stevens on Unsplash</span></div>
+</a>
+<a href="img/doha.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Doha — West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash" aria-describedby="pg-no-exif-cap-7" data-pg-desc="West Bay in Doha, Qatar<br>Photo by <a href=&quot;https://unsplash.com/@akbarnemati&quot;>Akbar Nemati</a> on <a href=&quot;https://unsplash.com/photos/a-city-skyline-with-a-full-moon-in-the-sky-Q8NuHm4PbXc&quot;>Unsplash</a>">
+<img src="img/thumbs/doha.jpg" alt="West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-7"><span class="pg-title">Doha</span><span class="pg-description">West Bay in Doha, Qatar Photo by Akbar Nemati on Unsplash</span></div>
+</a>
+<a href="img/durham.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Water tower — Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash" aria-describedby="pg-no-exif-cap-8" data-pg-desc="Lucky Strike water tower in Durham, North Carolina<br>Photo by <a href=&quot;https://unsplash.com/@colincollect&quot;>Colin Rowley</a> on <a href=&quot;https://unsplash.com/photos/a-water-tower-in-the-middle-of-a-town-kKegdvaaHvo&quot;>Unsplash</a>">
+<img src="img/thumbs/durham.jpg" alt="Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-8"><span class="pg-title">Water tower</span><span class="pg-description">Lucky Strike water tower in Durham, North Carolina Photo by Colin Rowley on Unsplash</span></div>
+</a>
+<a href="img/fanous.jpg" data-pswp-width="1872" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.7800;" title="Fanous — Ramandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-9" data-pg-desc="Ramandan fanous (lantern) in Cairo, Egypt<br>Photo by Andrew Heiss">
+<img src="img/thumbs/fanous.jpg" alt="Ramandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss" width="234" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-9"><span class="pg-title">Fanous</span><span class="pg-description">Ramandan fanous (lantern) in Cairo, Egypt Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/grand-canyon.jpg" data-pswp-width="2400" data-pswp-height="1800" data-cropped="false" class="pg-item" style="flex-grow: 1.3333;" title="Grand Canyon — The Grand Canyon in Arizona Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-10" data-pg-desc="The Grand Canyon in Arizona<br>Photo by Andrew Heiss">
+<img src="img/thumbs/grand-canyon.jpg" alt="The Grand Canyon in Arizona Photo by Andrew Heiss" width="400" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-10"><span class="pg-title">Grand Canyon</span><span class="pg-description">The Grand Canyon in Arizona Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/ice.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.6667;" title="Ice castle — Ice castle in Midway, Utah Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-11" data-pg-desc="Ice castle in Midway, Utah<br>Photo by Andrew Heiss">
+<img src="img/thumbs/ice.jpg" alt="Ice castle in Midway, Utah Photo by Andrew Heiss" width="200" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-11"><span class="pg-title">Ice castle</span><span class="pg-description">Ice castle in Midway, Utah Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/marta.jpg" data-pswp-width="2400" data-pswp-height="4267" data-cropped="false" class="pg-item" style="flex-grow: 0.5625;" title="MARTA — MARTA train in Atlanta, Georgia Photo by Levi on Unsplash" aria-describedby="pg-no-exif-cap-12" data-pg-desc="MARTA train in Atlanta, Georgia<br>Photo by <a href=&quot;https://unsplash.com/@levipurk&quot;>Levi</a> on <a href=&quot;https://unsplash.com/photos/a-silver-train-traveling-over-a-bridge-under-a-blue-sky-jXfCtN7hzZY&quot;>Unsplash</a>">
+<img src="img/thumbs/marta.jpg" alt="MARTA train in Atlanta, Georgia Photo by Levi on Unsplash" width="168" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-12"><span class="pg-title">MARTA</span><span class="pg-description">MARTA train in Atlanta, Georgia Photo by Levi on Unsplash</span></div>
+</a>
+<a href="img/nauvoo.jpg" data-pswp-width="1800" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.7500;" title="Nauvoo Temple — LDS temple in Nauvoo, Illinois Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-13" data-pg-desc="LDS temple in Nauvoo, Illinois<br>Photo by Andrew Heiss">
+<img src="img/thumbs/nauvoo.jpg" alt="LDS temple in Nauvoo, Illinois Photo by Andrew Heiss" width="225" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-13"><span class="pg-title">Nauvoo Temple</span><span class="pg-description">LDS temple in Nauvoo, Illinois Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/pyramid-landscape.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Pyramid (landscape) — Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-14" data-pg-desc="Great Pyramid of Giza in Cairo, Egypt<br>Photo by Andrew Heiss">
+<img src="img/thumbs/pyramid-landscape.jpg" alt="Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-14"><span class="pg-title">Pyramid (landscape)</span><span class="pg-description">Great Pyramid of Giza in Cairo, Egypt Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/pyramid.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="false" class="pg-item" style="flex-grow: 0.6667;" title="Pyramid — Pyramid in Giza, Cairo, Egypt Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-15" data-pg-desc="Pyramid in Giza, Cairo, Egypt<br>Photo by Andrew Heiss">
+<img src="img/thumbs/pyramid.jpg" alt="Pyramid in Giza, Cairo, Egypt Photo by Andrew Heiss" width="200" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-15"><span class="pg-title">Pyramid</span><span class="pg-description">Pyramid in Giza, Cairo, Egypt Photo by Andrew Heiss</span></div>
+</a>
+<a href="img/rome.jpg" data-pswp-width="2400" data-pswp-height="3000" data-cropped="false" class="pg-item" style="flex-grow: 0.8000;" title="Colosseum — The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash" aria-describedby="pg-no-exif-cap-16" data-pg-desc="The Colosseum in Rome, Italy Photo by <a href=&quot;https://unsplash.com/@spencerdavis&quot;>Spencer Davis</a> on <a href=&quot;https://unsplash.com/photos/aerial-view-of-colosseum-at-rome-italy-ckotRXopwRM&quot;>Unsplash</a>">
+<img src="img/thumbs/rome.jpg" alt="The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash" width="240" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-16"><span class="pg-title">Colosseum</span><span class="pg-description">The Colosseum in Rome, Italy Photo by Spencer Davis on Unsplash</span></div>
+</a>
+<a href="img/timpanogos.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Mt. Timpanogos — Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash" aria-describedby="pg-no-exif-cap-17" data-pg-desc="Mt. Timpanogos from Utah County, Utah<br>Photo by <a href=&quot;https://unsplash.com/@northernstatemedia&quot;>Sonny Mauricio</a> on <a href=&quot;https://unsplash.com/photos/a-snow-covered-mountain-range-with-trees-in-the-foreground-Nv-b4hDOgWY&quot;>Unsplash</a>">
+<img src="img/thumbs/timpanogos.jpg" alt="Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash" width="450" height="300" loading="lazy">
+<div class="pg-caption" id="pg-no-exif-cap-17"><span class="pg-title">Mt. Timpanogos</span><span class="pg-description">Mt. Timpanogos from Utah County, Utah Photo by Sonny Mauricio on Unsplash</span></div>
+</a>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
