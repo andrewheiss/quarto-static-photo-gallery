@@ -4,5 +4,6 @@
 /.quarto/
 /.luarc.json
 img/thumbs/
+_site/
 
 **/*.quarto_ipynb
