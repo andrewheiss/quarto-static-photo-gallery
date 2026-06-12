@@ -1,0 +1,132 @@
+# Optional per-image metadata
+# Any fields here override EXIF-derived values.
+# Keys are exact filenames (including extension).
+images:
+  books.jpg:
+    title: "Books"
+    description: |
+      A wall of books  
+      Photo by [Peter Thomas](https://unsplash.com/@lifeof_peter_) on [Unsplash](https://unsplash.com/photos/books-fill-a-wooden-bookshelf-he4j9YyWFoo)
+    date: 2025-03-13
+    alt: ""
+ 
+  breaad.jpg:
+    title: "Bread"
+    description: |
+      A stack of sliced bread  
+      Photo by [Rodolfo Marques](https://unsplash.com/@rodolfomarques) on [Unsplash](https://unsplash.com/photos/sliced-breads-GzBO_o0RvEg)
+    date: 2018-08-08
+    alt: ""
+ 
+  bridal-veil.jpg:
+    title: "Bridal Veil Falls"
+    description: |
+      Bridal Veil Falls near Provo, Utah  
+      Photo by [David Wirzba](https://unsplash.com/@psalms) on [Unsplash](https://unsplash.com/photos/photo-of-waterfalls-during-daytime-hZuSXNKCyzE)
+    date: 2019-06-17
+    alt: ""
+ 
+  cairo.jpg:
+    title: ""
+    description: |
+      A felucca on the Nile in front of Cairo Tower in Egypt  
+      Photo by [Hatem Ramadan](https://unsplash.com/@canismajoris) on [Unsplash](https://unsplash.com/photos/a-sailboat-on-the-water-with-a-city-in-the-background-59RY-ykUIAg)
+    date: 2024-09-29
+    alt: ""
+ 
+  capitol-reef.jpg:
+    title: "Capitol Reef"
+    description: |
+      Hickman Bridge in Capitol Reef National Park, Utah  
+      Photo by [Lori Stevens](https://unsplash.com/@lancetraveler60) on [Unsplash](https://unsplash.com/photos/a-large-rock-formation-with-an-arch-in-the-middle-of-it-Kdu1gxxua5A)
+    date: 2022-06-2
+    alt: ""
+ 
+  doha.jpg:
+    title: "Doha"
+    description: |
+      West Bay in Doha, Qatar  
+      Photo by [Akbar Nemati](https://unsplash.com/@akbarnemati) on [Unsplash](https://unsplash.com/photos/a-city-skyline-with-a-full-moon-in-the-sky-Q8NuHm4PbXc)
+    date: 2023-05-04
+    alt: ""
+ 
+  durham.jpg:
+    title: "Water tower"
+    description: |
+      Lucky Strike water tower in Durham, North Carolina  
+      Photo by [Colin Rowley](https://unsplash.com/@colincollect) on [Unsplash](https://unsplash.com/photos/a-water-tower-in-the-middle-of-a-town-kKegdvaaHvo)
+    date: 2021-10-07
+    alt: ""
+ 
+  marta.jpg:
+    title: "MARTA"
+    description: |
+      MARTA train in Atlanta, Georgia  
+      Photo by [Levi](https://unsplash.com/@levipurk) on [Unsplash](https://unsplash.com/photos/a-silver-train-traveling-over-a-bridge-under-a-blue-sky-jXfCtN7hzZY)
+    date: 2023-10-09
+    alt: ""
+ 
+  rome.jpg:
+    title: "Colosseum"
+    description: |
+      The Colosseum in Rome, Italy
+      Photo by [Spencer Davis](https://unsplash.com/@spencerdavis) on [Unsplash](https://unsplash.com/photos/aerial-view-of-colosseum-at-rome-italy-ckotRXopwRM)
+    date: 2019-04-23
+    alt: ""
+ 
+  timpanogos.jpg:
+    title: "Mt. Timpanogos"
+    description: |
+      Mt. Timpanogos from Utah County, Utah  
+      Photo by [Sonny Mauricio](https://unsplash.com/@northernstatemedia) on [Unsplash](https://unsplash.com/photos/a-snow-covered-mountain-range-with-trees-in-the-foreground-Nv-b4hDOgWY)
+    date: 2021-12-19
+    alt: ""
+
+  al-aqsa.jpg: 
+    title: "Al-Aqsa"
+    description: |
+      Al-Aqsa mosque in Jerusalem  
+      Photo by Andrew Heiss
+    alt: ""
+ 
+  fanous.jpg: 
+    title: "Fanous"
+    description: |
+      Ramandan fanous (lantern) in Cairo, Egypt  
+      Photo by Andrew Heiss
+    alt: ""
+ 
+  grand-canyon.jpg: 
+    title: "Grand Canyon"
+    description: |
+      The Grand Canyon in Arizona  
+      Photo by Andrew Heiss
+    alt: ""
+ 
+  ice.jpg: 
+    title: "Ice castle"
+    description: |
+      Ice castle in Midway, Utah  
+      Photo by Andrew Heiss
+    alt: ""
+ 
+  nauvoo.jpg: 
+    title: "Nauvoo Temple"
+    description: |
+      LDS temple in Nauvoo, Illinois  
+      Photo by Andrew Heiss
+    alt: ""
+ 
+  pyramid-landscape.jpg: 
+    title: "Pyramid (landscape)"
+    description: |
+      Great Pyramid of Giza in Cairo, Egypt  
+      Photo by Andrew Heiss
+    alt: ""
+ 
+  pyramid.jpg: 
+    title: "Pyramid"
+    description: |
+      Pyramid in Giza, Cairo, Egypt  
+      Photo by Andrew Heiss
+    alt: ""
