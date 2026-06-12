@@ -1,0 +1,13 @@
+---
+format: 
+  gfm:
+    toc: true
+    wrap: preserve
+    include-before-body: 
+      text: |
+        # Static photo galleries (through PhotoSwipe) for Quarto
+---
+
+<!-- README.md is generated from _README.qmd. Please edit that file -->
+
+{{< include _README.qmd >}}

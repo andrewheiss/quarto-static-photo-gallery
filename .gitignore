@@ -3,3 +3,6 @@
 .Rhistory
 /.quarto/
 /.luarc.json
+img/thumbs/
+
+**/*.quarto_ipynb

@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Quarto static photo gallery demo"
+
+  repo-url: "https://github.com/andrewheiss/quarto-static-photo-gallery"
+
+  navbar:
+    left:
+      - text: "README"
+        href: index.qmd
+      - href: justified.qmd
+        text: Justified
+      - href: masonry.qmd
+        text: Masonry
+      - href: grid.qmd
+        text: Grid
+
+    right:
+      - icon: github
+        aria-label: github
+        href: https://github.com/andrewheiss/quarto-static-photo-gallery
+
+extensions:
+  photo-gallery:
+    thumbnail-max-width: 350
+    thumbnail-quality: 80
+    show-exif: true
+    show-date: true
+    date-format: "MMMM D, YYYY"
+    datetime-format: "MMMM D, YYYY [at] h:mm A"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    toc: false

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sSL \"https://unpkg.com/photoswipe@5.4.4/\")",
+      "Bash(curl -sSL \"https://unpkg.com/photoswipe@5.4.4/dist/\")",
+      "Bash(quarto render *)",
+      "WebFetch(domain:localhost)",
+      "WebFetch(domain:photos.heiss.website)",
+      "Bash(curl -s \"https://photos.heiss.website/rachel-pre-mission/\")",
+      "WebFetch(domain:unsplash.com)"
+    ]
+  }
+}
