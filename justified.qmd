@@ -6,6 +6,8 @@ extensions:
     layout: justified
     thumbnail-height: 280
     gap: 5
+    date-format: "MMMM D, YYYY"
+    datetime-format: "MMMM D, YYYY [at] h:mm A"
 ---
 
 The **justified** layout fills each row to the full container width at a consistent height, similar to Google Photos or Flickr. Set `thumbnail-height` to control the target row height in pixels.

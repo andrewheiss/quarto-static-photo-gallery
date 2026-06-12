@@ -10,6 +10,8 @@ extensions:
     columns: 5
     gap: 4
     show-bullets: true
+    date-format: "MMMM D, YYYY"
+    datetime-format: "MMMM D, YYYY [at] h:mm A"
 ---
 
 The **grid** layout uses CSS Grid with uniform square cells and `object-fit: cover` — all thumbnails are the same size regardless of the source image's aspect ratio. Good for portfolios where visual consistency matters more than showing full frames.

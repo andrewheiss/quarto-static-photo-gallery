@@ -72,7 +72,7 @@ There are lots of possible options! Each of these can be set either in frontmatt
 | `layout` | `justified` | Gallery layout: `justified`, `masonry`, or `grid` |
 | `thumbnail-height` | `300` | Target row height in px (drives justified layout; also the thumbnail resize target) |
 | `thumbnail-max-width` | `1200` | Max thumbnail long edge in px |
-| `thumbnail-quality` | `85` | JPEG quality for generated thumbnails (1–95) |
+| `thumbnail-quality` | `90` | JPEG quality for generated thumbnails (1–95) |
 | `columns` | `3` | Number of columns for `masonry` and `grid` layouts |
 | `gap` | `4` | Gap between images in px |
 | `show-exif` | `true` | Show camera/lens/exposure data in the caption area |

@@ -27,7 +27,7 @@ def parse_args():
                    help="Target thumbnail height in pixels")
     p.add_argument("--thumb-max-width", type=int, default=1200,
                    help="Max thumbnail width in pixels")
-    p.add_argument("--thumb-quality", type=int, default=85,
+    p.add_argument("--thumb-quality", type=int, default=90,
                    help="JPEG quality for thumbnails (1-95)")
     return p.parse_args()
 

@@ -8,6 +8,8 @@ extensions:
     layout: masonry
     columns: 5
     gap: 6
+    date-format: "MMMM D, YYYY"
+    datetime-format: "MMMM D, YYYY [at] h:mm A"
 ---
 
 The **masonry** layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions.
