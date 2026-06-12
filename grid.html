@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grid Layout – Quarto static photo gallery demo</title>
+<title>Grid layout – Quarto static photo gallery demo</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8f1ccc7d288a21fc62ac2118940d31a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39cd51f0cd98d1d549c884833297b499.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3ab912cbc46d193674088789e2a86cdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39cd51f0cd98d1d549c884833297b499.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe.umd.min.js"></script>
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe-lightbox.umd.min.js"></script>
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/dayjs.min.js"></script>
@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Grid Layout</h1>
+<h1 class="title">Grid layout</h1>
 </div>
 
 
@@ -357,11 +357,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The <strong>grid</strong> layout uses CSS Grid with uniform square cells and <code>object-fit: cover</code> — all thumbnails are the same size regardless of the source image’s aspect ratio. Good for portfolios where visual consistency matters more than showing full frames.</p>
+<p>The grid layout uses uniform square cells so that all thumbnails are the same size regardless of the source image’s aspect ratio.</p>
 <section id="column-grid-with-dot-navigation" class="level2">
 <h2 class="anchored" data-anchor-id="column-grid-with-dot-navigation">5-column grid with dot navigation</h2>
 <p>With <code>show-bullets: true</code>, the PhotoSwipe lightbox shows a dot indicator at the bottom. Click any image to see it:</p>
-<div class="photo-gallery" data-layout="grid" style="--pg-gap: 4px; --pg-row-height: 300px; --pg-columns: 5;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ columns=5 show-bullets=true &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="photo-gallery" data-layout="grid" style="--pg-gap: 5px; --pg-row-height: 300px; --pg-columns: 5;">
 <div class="pswp-gallery" id="pg-1" data-download="true" data-transition="zoom" data-bullets="true">
 <a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-1-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
 <img src="img/thumbs/al-aqsa.jpg" alt="Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" width="420" height="280" loading="lazy">
@@ -434,11 +435,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="minimal-gallery-no-metadata-no-download" class="level2">
-<h2 class="anchored" data-anchor-id="minimal-gallery-no-metadata-no-download">Minimal gallery — no metadata, no download</h2>
-<p>Use shortcode arguments to strip the gallery down for contexts where you want clean presentation without any UI chrome. <code>show-exif=false</code> hides camera data, <code>show-download=false</code> removes the download button from the lightbox toolbar, and <code>transition="none"</code> disables the open/close animation:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ columns=5 show-exif=false show-date=false show-download=false show-bullets=false transition="none" id="minimal" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="photo-gallery" data-layout="grid" style="--pg-gap: 4px; --pg-row-height: 300px; --pg-columns: 5;">
+<section id="minimal-gallery-with-no-metadata-and-no-download-button" class="level2">
+<h2 class="anchored" data-anchor-id="minimal-gallery-with-no-metadata-and-no-download-button">Minimal gallery with no metadata and no download button</h2>
+<p>Use shortcode arguments to strip the gallery down for situations where you want clean presentation without any extra UI stuff. <code>show-exif=false</code> hides camera data, <code>show-download=false</code> removes the download button from the lightbox toolbar, and <code>transition="none"</code> disables the open/close animation:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ columns=5 show-exif=false show-date=false show-download=false show-bullets=false transition="none" id="minimal" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="photo-gallery" data-layout="grid" style="--pg-gap: 5px; --pg-row-height: 300px; --pg-columns: 5;">
 <div class="pswp-gallery" id="pg-minimal" data-download="false" data-transition="none" data-bullets="false">
 <a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-minimal-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
 <img src="img/thumbs/al-aqsa.jpg" alt="Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" width="420" height="280" loading="lazy">

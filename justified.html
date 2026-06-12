@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Justified Layout – Quarto static photo gallery demo</title>
+<title>Justified layout – Quarto static photo gallery demo</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8f1ccc7d288a21fc62ac2118940d31a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39cd51f0cd98d1d549c884833297b499.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3ab912cbc46d193674088789e2a86cdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39cd51f0cd98d1d549c884833297b499.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe.umd.min.js"></script>
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe-lightbox.umd.min.js"></script>
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/dayjs.min.js"></script>
@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Justified Layout</h1>
+<h1 class="title">Justified layout</h1>
 </div>
 
 
@@ -357,11 +357,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The <strong>justified</strong> layout fills each row to the full container width at a consistent height, similar to Google Photos or Flickr. Set <code>thumbnail-height</code> to control the target row height in pixels.</p>
-<p>The frontmatter above sets defaults for this page. Options set there apply to every <code>{{&lt; photo-gallery &gt;}}</code> call on the page unless overridden by a shortcode argument.</p>
+<p>The justified layout fills each row to the full container width at a consistent height, similar to Google Photos or Flickr. Set <code>thumbnail-height</code> to control the target row height in pixels.</p>
+<p>The frontmatter above sets defaults for this page. Options set there apply to all the shortcodes in the document unless overridden by shortcode arguments.</p>
 <section id="with-exif-metadata" class="level2">
 <h2 class="anchored" data-anchor-id="with-exif-metadata">With EXIF metadata</h2>
-<p>With <code>show-exif: true</code> and <code>show-date: true</code>, the lightbox caption area shows a dot-separated summary of whatever EXIF fields are present — date, aperture, shutter speed, focal length, ISO, and camera body. Click any image to see it.</p>
+<p>With <code>show-exif: true</code> and <code>show-date: true</code> (set in the YAML above), the lightbox caption area shows a dot-separated summary of whatever EXIF fields are present. Click any image to see it.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="photo-gallery" data-layout="justified" style="--pg-gap: 5px; --pg-row-height: 280px; --pg-columns: 3;">
 <div class="pswp-gallery" id="pg-1" data-download="true" data-transition="zoom" data-bullets="false">
 <a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-1-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
@@ -439,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="shortcode-arguments-override-frontmatter">Shortcode arguments override frontmatter</h2>
 <p>Any configuration option can be passed directly to the shortcode. Shortcode arguments take precedence over frontmatter for that call only, so you can set page-wide defaults and override per gallery as needed.</p>
 <p>Here the same album is rendered with EXIF hidden, the download button removed, and a <code>fade</code> transition instead of the default <code>zoom</code>. A unique <code>id</code> is required when pointing two galleries at the same album with otherwise identical settings:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ show-exif=false show-date=false show-download=false transition="fade" id="no-exif" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ show-exif=false show-date=false show-download=false transition="fade" id="no-exif" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="photo-gallery" data-layout="justified" style="--pg-gap: 5px; --pg-row-height: 280px; --pg-columns: 3;">
 <div class="pswp-gallery" id="pg-no-exif" data-download="false" data-transition="fade" data-bullets="false">
 <a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-no-exif-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">

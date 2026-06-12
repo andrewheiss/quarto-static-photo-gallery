@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Masonry Layout – Quarto static photo gallery demo</title>
+<title>Masonry layout – Quarto static photo gallery demo</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8f1ccc7d288a21fc62ac2118940d31a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39cd51f0cd98d1d549c884833297b499.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3ab912cbc46d193674088789e2a86cdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39cd51f0cd98d1d549c884833297b499.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe.umd.min.js"></script>
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/photoswipe-lightbox.umd.min.js"></script>
 <script src="site_libs/quarto-contrib/photo-gallery-0.1.0/dayjs.min.js"></script>
@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Masonry Layout</h1>
+<h1 class="title">Masonry layout</h1>
 </div>
 
 
@@ -357,11 +357,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The <strong>masonry</strong> layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions.</p>
-<section id="columns-frontmatter-default" class="level2">
-<h2 class="anchored" data-anchor-id="columns-frontmatter-default">5 columns (frontmatter default)</h2>
-<p>Pass the album folder as a positional argument; all other settings come from the frontmatter defaults above:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The masonry layout uses CSS columns to produce a Pinterest-style staggered layout. Images flow into columns without cropping, so taller and wider photos keep their proportions.</p>
+<section id="columns" class="level2">
+<h2 class="anchored" data-anchor-id="columns">5 columns</h2>
+<p>You can pass the album folder as a positional argument; all the other settings come from the frontmatter defaults above:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="photo-gallery" data-layout="masonry" style="--pg-gap: 6px; --pg-row-height: 300px; --pg-columns: 5;">
 <div class="pswp-gallery" id="pg-1" data-download="true" data-transition="zoom" data-bullets="false">
 <a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-1-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
@@ -438,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="columns-via-shortcode-argument" class="level2">
 <h2 class="anchored" data-anchor-id="columns-via-shortcode-argument">4 columns via shortcode argument</h2>
 <p>Override <code>columns</code> for a single gallery call without changing the page defaults:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img columns=4 gap=20 id="five-col" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; photo-gallery img/ columns=4 gap=20 id="five-col" &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="photo-gallery" data-layout="masonry" style="--pg-gap: 20px; --pg-row-height: 300px; --pg-columns: 4;">
 <div class="pswp-gallery" id="pg-five-col" data-download="true" data-transition="zoom" data-bullets="false">
 <a href="img/al-aqsa.jpg" data-pswp-width="2400" data-pswp-height="1600" data-cropped="false" class="pg-item" style="flex-grow: 1.5000;" title="Al-Aqsa — Al-Aqsa mosque in Jerusalem Photo by Andrew Heiss" aria-describedby="pg-five-col-cap-1" data-pg-desc="Al-Aqsa mosque in Jerusalem<br>Photo by Andrew Heiss">
