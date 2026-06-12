@@ -3,5 +3,4 @@ title: Static photo galleries for Quarto
 toc: true
 ---
 
-
 {{< include _README.qmd >}}
