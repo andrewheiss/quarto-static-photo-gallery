@@ -26,10 +26,10 @@ website:
 format:
   html:
     theme:
-      light: 
+      light:
         - zephyr
         - brand
-      dark: 
-        - solar
+      dark:
+        - darkly
         - brand
     toc: false

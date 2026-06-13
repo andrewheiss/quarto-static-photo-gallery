@@ -18,8 +18,12 @@ color:
     silver: "#DDDDDD"
     gray: "#AAAAAA"
     black: "#111111"
-  foreground: black
-  background: white
+  foreground:
+    light: black
+    dark: "#dee2e6"
+  background:
+    light: white
+    dark: "#222"
   primary: blue
   secondary: gray
   success: green
@@ -35,3 +39,10 @@ typography:
       source: google
   base: Lato
   headings: Aleo
+
+defaults:
+  bootstrap:
+    rules: |
+      .navbar {
+        --bs-navbar-padding-y: 0.85rem;
+      }
